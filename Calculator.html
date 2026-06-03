@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Modern</title>
+
+  <style>
+    :root {
+      --primary: #ff6b35;
+      --primary-dark: #d85a2c;
+      --bg-dark: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text: #ffffff;
+      --text-muted: #a0a0a0;
+      --accent: #00d4ff;
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #container {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 320px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    #display {
+      width: 100%;
+      padding: 20px;
+      font-size: 2.5rem;
+      font-weight: 500;
+      border: none;
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      margin-bottom: 20px;
+      border-radius: 12px;
+      text-align: right;
+      outline: none;
+    }
+
+    #key {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      padding: 18px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .operator {
+      color: var(--accent);
+    }
+
+    .equal,
+    .clear {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      grid-column: span 2;
+    }
+
+    .equal:hover,
+    .clear:hover {
+      box-shadow: 0 12px 30px rgba(255,107,53,0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <input type="text" id="display" disabled>
+
+    <div id="key">
+      <button class="operator" onclick="append('/')">÷</button>
+      <button class="operator" onclick="append('*')">×</button>
+      <button class="operator" onclick="append('-')">−</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('4')">4</button>
+
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+
+      <button onclick="append('3')">3</button>
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+
+    function append(value) {
+      display.value += value;
+    }
+
+    function clearDisplay() {
+      display.value = "";
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Keren - E-Commerce Mockup</title>
+    <style>
+        /* Reset & Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f4f6; color: #333; }
+        
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: bold; color: #ff5722; }
+        .search-bar { width: 40%; padding: 8px 15px; border: 1px solid #ddd; border-radius: 20px; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; }
+        
+        /* Hero Banner */
+        .hero { background: linear-gradient(135deg, #ff9800, #ff5722); color: white; padding: 60px 5%; text-align: center; }
+        .hero h1 { font-size: 36px; margin-bottom: 10px; }
+        
+        /* Product Section */
+        .container { padding: 40px 5%; }
+        .section-title { margin-bottom: 20px; font-size: 24px; color: #222; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        
+        /* Product Card */
+        .product-card { background: white; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-img { width: 100%; height: 180px; background-color: #eee; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #888; font-weight: bold; margin-bottom: 15px; }
+        .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .product-price { color: #ff5722; font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .btn-buy { background-color: #ff5722; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+        .btn-buy:hover { background-color: #e64a19; }
+
+        /* Footer */
+        footer { background-color: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TokoKeren</div>
+        <input type="text" class="search-bar" placeholder="Cari barang impianmu di sini...">
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Kategori</a>
+            <a href="#">Keranjang (0)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Promo Spesial Bulan Ini!</h1>
+        <p>Dapatkan diskon hingga 50% untuk produk elektronik dan fashion.</p>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Produk Terpopuler</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">Foto Produk 1</div>
+                <div class="product-name">Sepatu Sneakers Kece</div>
+                <div class="product-price">Rp 350.000</div>
+                <button class="btn-buy">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Foto Produk 2</div>
+                <div class="product-name">Jam Tangan Minimalis</div>
+                <div class="product-price">Rp 750.000</div>
+                <button class="btn-buy">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Foto Produk 3</div>
+                <div class="product-name">Ransel Waterproof 20L</div>
+                <div class="product-price">Rp 225.000</div>
+                <button class="btn-buy">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Foto Produk 4</div>
+                <div class="product-name">Earphone Wireless Bass+</div>
+                <div class="product-price">Rp 180.000</div>
+                <button class="btn-buy">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TokoKeren. Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>
